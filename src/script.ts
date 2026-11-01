@@ -20,3 +20,24 @@ const numArr : number[] = [1, 2, 3]
 
 //Tuple
 const dhakaLatLong : readonly [number, number] = [23.8103, 98.4125]
+
+const concatName = (firstName : string , lastName ?: string) =>{
+  if ( !lastName){
+    return firstName;
+  }
+  return firstName + " " + lastName;
+}
+
+// console.log(concatName("Siam"))
+// console.log(concatName("Siam" , "Fahim"))
+
+const greeting = (greeting : string , fullName : string) : void =>{
+  console.log(greeting + " " + fullName)
+}
+
+const greeting1 = (greeting : string , fullName : string = "Default") : void =>{
+  console.log(greeting + " " + fullName)
+}
+greeting1("Siam")
+
+ 
