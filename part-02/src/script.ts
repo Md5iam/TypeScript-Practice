@@ -6,4 +6,5 @@
 // import "./v2-union.js"
 // import "./v5-special-types.js"
 // import "./v6-type-assertions.js"
-import "./v7-narrowing.js"
+// import "./v7-narrowing.js"
+import "./v8-narowing-cont.js"
