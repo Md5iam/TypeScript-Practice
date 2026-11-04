@@ -3,4 +3,4 @@
 const greetings = () => {
   console.log("Siam AHMED")
 }
-greetings()
+// greetings()
