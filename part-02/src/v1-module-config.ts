@@ -1,6 +1,6 @@
 // export {}
 
-const greetings = () =>{
+const greetings = () => {
   console.log("Siam AHMED")
 }
 greetings()
