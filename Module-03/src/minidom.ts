@@ -30,10 +30,37 @@ class Button extends UIElement{
   }
 }
 
+class Form extends UIElement{
+  private children: UIElement[] = [];
+
+  appendChild( child : UIElement){
+    this.children.push(child);
+  }
+
+  render(){
+    const childrenHTML = this.children
+      .map((child) => child.render())
+      .join("\n ");
+
+    return `<form id="${this.id}" style="border: 1px solid #ccc; padding: 20px; display: flex; flex-direction: column; max-width:300px; border-radius:10px; gap:5px;">\n ${childrenHTML} \n</form>`;
+  }
+}
+
+
+const nameInput = new Input("name", "name", "Enter your name");
 const emailInput = new Input("email", "email", "Enter your email");
 const passwordInput = new Input("pass", "password", "Enter your password");
 const submitButton = new Button("submit-btn", "Submit");
+const formElement = new Form("login-form");
 
-console.log(emailInput.render());
-console.log(passwordInput.render());
-console.log(submitButton.render());
+formElement.appendChild(nameInput);
+formElement.appendChild(emailInput);
+formElement.appendChild(passwordInput);
+formElement.appendChild(submitButton);
+
+console.log(formElement.render());
+
+const rootElement = document.getElementById("root");
+if( rootElement){
+  rootElement.innerHTML = formElement.render();
+}
